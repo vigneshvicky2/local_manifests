@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- PenguinOS (celerity, Android 17) local manifest for POCO X7 Pro (rodin, MT6899) -->
+<!-- Put in: .repo/local_manifests/rodin.xml   (forks on github.com/vigneshvicky2) -->
+<manifest>
+  <remote name="gitlab" fetch="https://gitlab.com" />
+  <remote name="hlcyn"  fetch="https://git.hlcyn.org" />
+  <!-- "github" remote (https://github.com) already exists in the PenguinOS manifest -->
+
+  <!-- ===== Device ===== -->
+  <project path="device/xiaomi/rodin"        name="vigneshvicky2/android_device_xiaomi_rodin"           remote="github" revision="penguin" />
+  <project path="device/xiaomi/rodin-kernel" name="Digimend-X-Rodin/android_device_xiaomi_rodin-kernel" remote="github" revision="lineage-24.0" clone-depth="1" />
+  <project path="vendor/xiaomi/rodin"        name="ram-unlok/vendor_xiaomi_rodin"                       remote="gitlab" revision="TheCloverProject" clone-depth="1" />
+
+  <!-- ===== MediaTek / Xiaomi common ===== -->
+  <project path="device/mediatek/sepolicy_vndr" name="Digimend-X-Rodin/android_device_mediatek_sepolicy_vndr" remote="github" revision="lineage-24.0" />
+  <project path="hardware/mediatek"             name="Digimend-X-Rodin/android_hardware_mediatek"             remote="github" revision="lineage-24.0" />
+  <project path="hardware/xiaomi"               name="Digimend-X-Rodin/android_hardware_xiaomi"               remote="github" revision="lineage-24.0" />
+
+  <!-- ===== Missing from PenguinOS (needed by the rodin tree) ===== -->
+  <project path="hardware/google/pixel"     name="LineageOS/android_hardware_google_pixel"   remote="github" revision="lineage-24.0" />
+  <project path="hardware/clover/interfaces" name="The-Clover-Project/hardware_clover_interfaces" remote="github" revision="17" />
+
+  <!-- ===== MIUI Camera (only 16.2 exists publicly - test on 17) ===== -->
+  <project path="device/xiaomi/rodin-miuicamera" name="vigneshvicky2/android_device_xiaomi_rodin-miuicamera"    remote="github" revision="16.2" />
+  <project path="vendor/xiaomi/rodin-miuicamera" name="halcyonlv/vendor_xiaomi_rodin-miuicamera"              remote="hlcyn"  revision="16.2" clone-depth="1" />
+
+  <!-- ===== Bypass charging (YAAP app + rodin patch, pushed to YOUR fork) ===== -->
+  <project path="packages/apps/BypassCharge" name="vigneshvicky2/packages_apps_BypassCharge" remote="github" revision="sixteen" />
+
+  <!-- ===== Optional: Dolby UI ===== -->
+  <!-- <project path="packages/apps/DolbyUI" name="Digimend-X-Rodin/packages_apps_DolbyUI" remote="github" revision="a" /> -->
+</manifest>
